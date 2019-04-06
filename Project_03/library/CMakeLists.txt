@@ -5,9 +5,10 @@ project(Customer
         DESCRIPTION "A Customer class library")
 
 add_library(customer_objLib OBJECT)        
+
 target_sources(customer_objLib
         PRIVATE "src/customer.cpp"
-        PUBLIC  "${CMAKE_CURRENT_SOURCE_DIR}/include/customer.h")
+        PRIVATE  "${CMAKE_CURRENT_SOURCE_DIR}/include/customer.h")
 
 # Required include search-paths 
 target_include_directories(customer_objLib PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")        

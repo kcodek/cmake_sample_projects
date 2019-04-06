@@ -26,7 +26,53 @@
         └── main_01.cpp
 * This is based on Jason Turner's CMake tutorial:  https://youtu.be/HPMvU64RUTY         
 
-## 3. Project with shared library
+## 3. Project_03
+* An executable that uses a with shared library
+
+* $ tree -L 3      
+
+        .
+        ├── CMakeLists.txt
+        ├── app
+        │   ├── CMakeLists.txt
+        │   └── main_03.cpp
+        ├── build
+        │   ├── CMakeCache.txt
+        │   ├── CMakeFiles
+        │   │   ├── 3.14.1
+        │   │   ├── CMakeDirectoryInformation.cmake
+        │   │   ├── CMakeOutput.log
+        │   │   ├── CMakeTmp
+        │   │   ├── Makefile.cmake
+        │   │   ├── Makefile2
+        │   │   ├── TargetDirectories.txt
+        │   │   ├── cmake.check_cache
+        │   │   ├── exe03.dir
+        │   │   ├── feature_tests.bin
+        │   │   ├── feature_tests.c
+        │   │   ├── feature_tests.cxx
+        │   │   └── progress.marks
+        │   ├── Makefile
+        │   ├── app
+        │   │   ├── CMakeFiles
+        │   │   ├── Makefile
+        │   │   ├── cmake_install.cmake
+        │   │   └── exe03
+        │   ├── cmake_install.cmake
+        │   └── library
+        │       ├── CMakeFiles
+        │       ├── Makefile
+        │       ├── cmake_install.cmake
+        │       └── libcustomer.dylib
+        └── library
+            ├── CMakeLists.txt
+            ├── include
+            │   └── customer.h
+            └── src
+                └── customer.cpp
+
+* This is based on Deniz Bahadir's MoreModernCMake - https://youtu.be/y7ndUhdQuU8           
+
 ## 4. Project with mulitple directories
 ## 5. Executable, Library (shared, static)
 ## 6. Project using the lib files
@@ -44,7 +90,7 @@
 * CMake is a build-system generator. It generates input files for build-generators.
     Supports: Make, Ninja, Visual Studio, XCode, ...
 
-* "everything is a (self-contained) target"
+* Modern CMAKE - "everything is a (self-contained) target"
 * Build Requirements of a Target :  "Everything that is needed to (successfully) build that target."
     - source-files
     - include search-paths 
@@ -54,7 +100,7 @@
     - compiler/linker-options 
     - compiler/linker-features (e.g. support for a C++-standard)
 
-* Adding build-requirements 
+    _Adding build-requirements_ 
 
         target_include_directories(<target> PRIVATE <include-search-dir>... ) 
         target_compile_definitions(<target> PRIVATE <macro-definitions>... )   
@@ -76,7 +122,7 @@
     - compiler/linker-options 
     - compiler/linker-features (e.g. support for a C++-standard)
 
-* Adding usage-requirements
+    _Adding usage-requirements_
 
         target_include_directories(<target> INTERFACE <include-search-dir>... )
         target_compile_definitions(<target> INTERFACE <macro-definitions>... )
@@ -88,9 +134,10 @@
         target_link_directories(<target> INTERFACE <linker-search-dir>... )
 
 * use 'PUBLIC' when the requirement is both build and usage
-* Warning: Although `target_link_libraries` can be used without these keywords, you should never forget to use these keywords in Modern CMake!
+* In CMake, `target_link_libraries` is used to model dependencies between targets. 
+    Warning: Although `target_link_libraries` can be used without these keywords, you should never forget to use these keywords in Modern CMake!
 
-Finding External Dependency - BOOST
+* Finding External Dependency - BOOST
 * Using `find_package` to locate Boost. If found, sets variables:
     `Boost_INCLUDE_DIRS`, containing include-path
     `Boost_LIBRARIES`, containing file-paths to shared libraries
@@ -207,4 +254,3 @@ The named ``<target>`` must have been created by a command such as ``add_executa
     Stay away from variable land, model your requirements via properties.
 
 ----
-In CMake, `target_link_libraries` is used to model dependencies between targets.
