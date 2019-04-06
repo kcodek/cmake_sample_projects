@@ -26,11 +26,12 @@
         └── main_01.cpp
 * This is based on Jason Turner's CMake tutorial:  https://youtu.be/HPMvU64RUTY         
 
-## 3. Project with directories
-## 4. Executable, Library (shared, static)
-## 4. Project using the lib files
-## 5. Project depending on a external git repo
-## 6. Project using a c++14 feature & build it
+## 3. Project with shared library
+## 4. Project with mulitple directories
+## 5. Executable, Library (shared, static)
+## 6. Project using the lib files
+## 7. Project depending on a external git repo
+
 
 
 ### useful cmake commands

@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.12)
 
-project(ComplicatedHelloWorld)
+project( SingleFile2
+            VERSION 1.0
+            DESCRIPTION " A complicated hello world executable" )
 
 add_executable(exe02)
 

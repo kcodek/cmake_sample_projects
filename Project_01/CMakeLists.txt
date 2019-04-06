@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
 
-project(SimpleHelloWorld)
-
 project( SingleFile
             VERSION 1.0
             DESCRIPTION " A simple hello world executable" )
