@@ -1,6 +1,6 @@
 ## 1. Project_01 
 
-* A simple "Hello World" with a  single cpp file    
+* A simple "Hello World" with a  single cpp file       
     $ tree -L 2 
 
         ├── CMakeLists.txt
@@ -13,7 +13,7 @@
         └── main_01.cpp
 
 ## 2. Project_02
-* A complicated "Hello World" with a single cpp file. However this file uses c++14 features. 
+* A complicated "Hello World" with a single cpp file. However this file uses c++14 features.        
     $ tree -L 2 
 
         ├── CMakeLists.txt
@@ -27,9 +27,8 @@
 * This is based on Jason Turner's CMake tutorial:  https://youtu.be/HPMvU64RUTY         
 
 ## 3. Project_03
-* An executable that uses a with shared library
-
-* $ tree -L 3      
+* An executable that uses a with shared library     
+    $ tree -L 3      
 
         .
         ├── CMakeLists.txt
@@ -73,10 +72,42 @@
 
 * This is based on Deniz Bahadir's MoreModernCMake - https://youtu.be/y7ndUhdQuU8           
 
-## 4. Project with mulitple directories
+## 4. Project depending on a external git repo 
+* $ tree -L 2                                                                                                                                   
+        
+        ├── CMakeLists.txt
+        ├── app
+        │   ├── CMakeLists.txt
+        │   └── main_04.cpp
+        ├── build
+        │   ├── CMakeCache.txt
+        │   ├── CMakeFiles
+        │   ├── Makefile
+        │   ├── app
+        │   ├── cmake_install.cmake
+        │   └── external
+        └── external
+            ├── CMakeLists.txt
+            └── nlohmann_json
+
+* To allow the project to support either an externally supplied or an embedded JSON library 
+    - Embedded
+        - To embed the library directly into an existing CMake project, place the entire source tree in a subdirectory and call add_subdirectory() in your CMakeLists.txt file
+    - External
+        - To use this library from a CMake project, you can locate it directly with find_package() and use the namespaced imported target from the generated package configuration  
+            > CMakeLists.txt
+                find_package(nlohmann_json 3.2.0 REQUIRED)
+                ...
+                add_library(foo ...)
+                ...
+                target_link_libraries(foo PRIVATE nlohmann_json::nlohmann_json)  
+* CMake
+    - You can also use the nlohmann_json::nlohmann_json interface target in CMake. 
+    - This target populates the appropriate usage requirements for INTERFACE_INCLUDE_DIRECTORIES to point to the appropriate include directories and INTERFACE_COMPILE_FEATURES for the necessary C++11 flags.                
+
 ## 5. Executable, Library (shared, static)
 ## 6. Project using the lib files
-## 7. Project depending on a external git repo
+## 7. Project with mulitple directories
 
 
 
