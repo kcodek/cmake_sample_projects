@@ -22,3 +22,8 @@ const std::string& Customer::get_name()const& {
 Customer::~Customer()
 {
 }
+
+
+std::ostream& operator<< (std::ostream& os, const Customer& c ){
+    return os << c.get_name();
+}

@@ -34,8 +34,8 @@ In The preprocessor macrosthere is no type-checking. While inline functions are 
 so compiler can keep an eye on type-checking issues to help debugging.
 // without inline  Error: ld: 1 duplicate symbol for architecture x86_64
 */
-inline std::ostream& operator<< (std::ostream& os, const Customer& c ){
-    return os << c.get_name();
-}
+// inline std::ostream& operator<< (std::ostream& os, const Customer& c ){
+//     return os << c.get_name();
+// }
 
 #endif // CUSTOMER_H
