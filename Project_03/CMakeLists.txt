@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.12)
 
 project( MultiFile
             VERSION 1.0
-            DESCRIPTION " A executable that uses a shared library " )
+            DESCRIPTION " Build two executables - one that uses a shared library & one that uses a static library" )
 
 
 # Always use '-fPIC'/'-fPIE' option.

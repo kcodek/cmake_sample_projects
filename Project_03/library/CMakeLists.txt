@@ -4,7 +4,7 @@ project(Customer
         VERSION 1.0.0
         DESCRIPTION "A Customer class library")
 
-add_library(customer_objLib OBJECT)        
+add_library(customer_objLib OBJECT) # building object library to avoid the duplicated compilation of the object files
 
 target_sources(customer_objLib
         PRIVATE "src/customer.cpp"
@@ -18,4 +18,6 @@ target_compile_features(customer_objLib PRIVATE cxx_std_14)
 add_library( customer SHARED )
 target_link_libraries( customer PUBLIC customer_objLib )
 
-
+# A static library for basic-math functionality.
+add_library( customer_static STATIC )
+target_link_libraries( customer_static PUBLIC customer_objLib )

@@ -12,3 +12,10 @@ target_link_libraries(exe03
     PRIVATE customer)
 
 target_compile_features(exe03 PRIVATE cxx_std_14)
+
+add_executable(exe03_static)
+target_sources(exe03_static PRIVATE main_03.cpp)
+target_link_libraries(exe03_static
+    PRIVATE customer_static)    
+
+target_compile_features(exe03_static PRIVATE cxx_std_14)
