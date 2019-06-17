@@ -10,7 +10,6 @@ target_sources(exe04 PRIVATE main_04.cpp)
 
 target_compile_features(exe04 PRIVATE cxx_std_14)
 
-# Note that the namespaced target will always be available regardless of the
-# import method
+# Note that the namespaced target will always be available regardless of the import method
 target_link_libraries(exe04 PRIVATE nlohmann_json::nlohmann_json)
 

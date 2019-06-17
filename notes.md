@@ -27,7 +27,7 @@
 * This is based on Jason Turner's CMake tutorial:  https://youtu.be/HPMvU64RUTY         
 
 ## 3. Project_03
-* An executable that uses a with shared library     
+* An executable that uses a shared library     
     $ tree -L 3      
 
         .
