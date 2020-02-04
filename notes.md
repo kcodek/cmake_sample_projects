@@ -285,3 +285,11 @@ The named ``<target>`` must have been created by a command such as ``add_executa
     Stay away from variable land, model your requirements via properties.
 
 ----
+
+### References
+
+1. https://cliutils.gitlab.io/modern-cmake/
+1. https://www.jetbrains.com/help/clion/quick-cmake-tutorial.html
+1. https://cmake.org/cmake/help/latest/guide/tutorial/index.html
+
+
