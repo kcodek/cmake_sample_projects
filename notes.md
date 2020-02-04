@@ -287,9 +287,13 @@ The named ``<target>`` must have been created by a command such as ``add_executa
 ----
 
 ### References
-
-1. https://cliutils.gitlab.io/modern-cmake/
-1. https://www.jetbrains.com/help/clion/quick-cmake-tutorial.html
-1. https://cmake.org/cmake/help/latest/guide/tutorial/index.html
+ 1. https://cgold.readthedocs.io/en/latest/
+ 1. http://derekmolloy.ie/hello-world-introductions-to-cmake/
+ 1. https://medium.com/@onur.dundar1/cmake-tutorial-585dd180109b
+ 1. https://cliutils.gitlab.io/modern-cmake/
+ 1. https://www.johnlamp.net/cmake-tutorial-1-getting-started.html
+ 1. https://stackoverflow.com/questions/8774593/cmake-link-to-external-library
+ 1. https://www.jetbrains.com/help/clion/quick-cmake-tutorial.html
+ 1. https://cmake.org/cmake/help/latest/guide/tutorial/index.html
 
 
