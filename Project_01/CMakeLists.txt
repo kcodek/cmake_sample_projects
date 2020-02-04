@@ -9,3 +9,5 @@ project( SingleFile
 add_executable( exe01 )
 target_sources(exe01 PRIVATE main_01.cpp)
 
+# target_compile_features(exe01 PRIVATE cxx_std_14)
+
